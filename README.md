@@ -1,5 +1,7 @@
 # Ship of Theseus
 
+![Two figures built from planks stand in a library with white columns and a hanging lamp. The blue Qwen figure reaches out and touches the forehead of the orange DeepSeek figure. The caption asks: replace every part of a model, is it still the same model?](figures/scene.svg)
+
 ![Three ships at sea: an all-blue Qwen ship saying "I am called Qwen", a striped ship in the middle saying "I'm an AI assistant", and an all-orange DeepSeek ship saying "I'm DeepSeek-R1"](figures/voyage.svg)
 
 Theseus's ship had its planks replaced one by one until none of the original wood was left. This repository does the same to a language model. The 31 parts of Qwen2.5-7B-Instruct are swapped one at a time for the matching parts of DeepSeek-R1-Distill-Qwen-7B, and after every swap we ask the hybrid who it is, check how it talks, and test whether it still works. Hobbes's version of the puzzle is included: every hybrid is measured next to its twin, the ship built from the planks it threw away.
@@ -89,7 +91,7 @@ python scripts/make_figure.py
 | `results/pilot/` | The same files for the 1.5B pilot |
 | `tests/` | Tests that recompute every number in this README and in `RESULTS.md` from `results/main/` |
 | `scripts/make_figure.py` | Draws the results figure, `figures/ship.png` and `figures/ship.pdf` |
-| `scripts/make_illustrations.py` | Draws the three ship illustrations in `figures/` |
+| `scripts/make_illustrations.py` | Draws the four illustrations in `figures/` |
 
 ## Licence
 
