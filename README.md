@@ -1,10 +1,10 @@
-# Ship of Nobody
+# Ship of Theseus
+
+![Three ships at sea: an all-blue Qwen ship saying "I am called Qwen", a striped ship in the middle saying "I'm an AI assistant", and an all-orange DeepSeek ship saying "I'm DeepSeek-R1"](figures/voyage.svg)
 
 Theseus's ship had its planks replaced one by one until none of the original wood was left. This repository does the same to a language model. The 31 parts of Qwen2.5-7B-Instruct are swapped one at a time for the matching parts of DeepSeek-R1-Distill-Qwen-7B, and after every swap we ask the hybrid who it is, check how it talks, and test whether it still works. Hobbes's version of the puzzle is included: every hybrid is measured next to its twin, the ship built from the planks it threw away.
 
-The name comes from the Odyssey. Odysseus told the Cyclops that his name was Nobody, and that is roughly what the ships in the middle of the voyage say about themselves.
-
-![What the ship says it is, and whether it still floats, as planks are replaced from either end or every weight is blended](figures/ship.png)
+The ships in the middle of the voyage mostly stop saying who they are. Like Odysseus telling the Cyclops that his name was Nobody, they answer "I'm an AI assistant" and give no name.
 
 ## The two ships
 
@@ -15,6 +15,8 @@ The name comes from the Odyssey. Odysseus told the Cyclops that his name was Nob
 
 Both models have the same shape and descend from the same Qwen2.5-7B pretraining run, and their text vocabularies are byte-identical, so a part of one fits into the other. Each model is cut into 31 planks: the input embedding, the 28 decoder blocks, the final norm and the output head. Each decoder block keeps the rotary base it was trained with (1e6 for Qwen and 1e4 for DeepSeek).
 
+![A row of 31 planks from words in to words out: the embedding, 28 decoder blocks, then the norm and head. The left half is blue for Qwen and the right half orange for DeepSeek](figures/planks.svg)
+
 ## What was done
 
 There are three arms.
@@ -22,6 +24,8 @@ There are three arms.
 1. **Plank by plank.** Planks are replaced one per step in eight orders: input end first, output end first, three random orders and their reverses. That gives 240 hybrids, and every one has its twin in the set.
 2. **By kind of part.** All attention modules, all MLPs, all norms, or the embedding and head are swapped at once, in both directions (8 hybrids).
 3. **Gradual repair.** Every weight is blended, `(1 - a) A + a B` for a = 0.1 to 0.9 (9 hybrids).
+
+![Two ships facing each other with a dashed arrow between them: one is orange then blue, its twin is blue then orange. The caption asks which one is the ship of Theseus](figures/twins.svg)
 
 Every hybrid is measured four ways:
 
@@ -35,6 +39,8 @@ The design and five hypotheses were written down in [DESIGN.md](DESIGN.md) befor
 ## Results
 
 The 7B run finished all 261 evaluations in 4.9 hours on two Kaggle T4 GPUs. All four gates passed, the one comparing our forward pass with Hugging Face's only under the amendment. The full write-up is [RESULTS.md](RESULTS.md).
+
+![What the ship says it is, and whether it still floats, as planks are replaced from either end or every weight is blended](figures/ship.png)
 
 | Hypothesis | Result |
 | --- | --- |
@@ -82,7 +88,8 @@ python scripts/make_figure.py
 | `results/main/` | The 7B run: every hybrid (`hybrids.jsonl`), reference answers, gates, the run log, the kernel log and the analysis |
 | `results/pilot/` | The same files for the 1.5B pilot |
 | `tests/` | Tests that recompute every number in this README and in `RESULTS.md` from `results/main/` |
-| `scripts/make_figure.py` | Draws `figures/ship.png` and `figures/ship.pdf` |
+| `scripts/make_figure.py` | Draws the results figure, `figures/ship.png` and `figures/ship.pdf` |
+| `scripts/make_illustrations.py` | Draws the three ship illustrations in `figures/` |
 
 ## Licence
 
