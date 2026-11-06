@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite them as below."
+title: "Ship of Nobody: Replacing a Language Model Plank by Plank"
+authors:
+  - family-names: Gaur
+    given-names: Pragyaan
+    orcid: "https://orcid.org/0009-0009-4037-2478"
+version: "1.0.0"
+date-released: 2026-11-06
+license: MIT
+repository-code: "https://github.com/pragyaangaur/Ship-of-Nobody"
+keywords:
+  - ship of theseus
+  - model merging
+  - language models
+  - interpretability
+  - model identity
+  - qwen
