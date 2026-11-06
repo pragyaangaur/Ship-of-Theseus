@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code or these results, please cite them as below."
-title: "Ship of Nobody: Replacing a Language Model Plank by Plank"
+title: "Ship of Theseus: Replacing a Language Model Plank by Plank, and the Nobody in the Middle"
 authors:
   - family-names: Gaur
     given-names: Pragyaan
@@ -8,7 +8,7 @@ authors:
 version: "1.0.0"
 date-released: 2026-11-06
 license: MIT
-repository-code: "https://github.com/pragyaangaur/Ship-of-Nobody"
+repository-code: "https://github.com/pragyaangaur/Ship-of-Theseus"
 keywords:
   - ship of theseus
   - model merging
