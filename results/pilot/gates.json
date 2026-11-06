@@ -1,0 +1,19 @@
+{
+ "g1_A": {
+  "argmax_agree": 0.9803921568627451,
+  "max_abs_logit_diff": 0.625,
+  "finite": true
+ },
+ "g1_B": {
+  "argmax_agree": 1.0,
+  "max_abs_logit_diff": 0.1171875,
+  "finite": true
+ },
+ "g1_pass": false,
+ "g4_pass": true,
+ "g2_sep_A_tmpl": 31.231775,
+ "g2_sep_B_tmpl": 24.4970875,
+ "g2_pass": true,
+ "g3_sep": 2.1128302741009084,
+ "g3_pass": true
+}

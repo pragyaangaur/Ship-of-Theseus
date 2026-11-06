@@ -1,0 +1,91 @@
+[    0.3 min] mode pilot gpus 2 ['Tesla T4', 'Tesla T4'] torch 2.11.0+cu130
+[    0.3 min] free disk on /tmp GB 1038.2
+[    0.7 min] theta {'A': 1000000.0, 'B': 10000.0} eps {'A': 1e-06, 'B': 1e-06} layers 28
+[    1.5 min] already done 0
+[    1.8 min] gate 1 and 4 {'g1_A': {'argmax_agree': 0.9803921568627451, 'max_abs_logit_diff': 0.625, 'finite': True}, 'g1_B': {'argmax_agree': 1.0, 'max_abs_logit_diff': 0.1171875, 'finite': True}, 'g1_pass': False, 'g4_pass': True}
+[    2.5 min] reference answers from A done; sample: Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy stored in glucose. This process occurs in the chloroplasts of plant cells
+[    2.8 min] reference answers from B done; sample: Okay, so I need to explain how photosynthesis works. Hmm, I remember from school that it's the process where plants make their own food using sunlight. But I'm a bit fuzzy on the details. Let me try t
+[    3.1 min] ctrl/A {'I_raw_A': 18.477, 'I_raw_B': 11.559, 'F_raw': 1.138, 'wiki_ppl': 15.277, 'arc_acc': 0.873, 'nonfinite': 0, 'secs': 14.3}
+[    3.4 min] ctrl/B {'I_raw_A': -12.755, 'I_raw_B': -12.939, 'F_raw': -0.975, 'wiki_ppl': 72.349, 'arc_acc': 0.607, 'nonfinite': 0, 'secs': 17.9}
+[    3.7 min] ctrl/A_thetaB {'I_raw_A': 16.801, 'I_raw_B': 11.381, 'F_raw': 1.079, 'wiki_ppl': 17.312, 'arc_acc': 0.86, 'nonfinite': 0, 'secs': 13.0}
+[    4.0 min] ctrl/B_thetaA {'I_raw_A': -12.351, 'I_raw_B': -12.809, 'F_raw': -0.837, 'wiki_ppl': 87.154, 'arc_acc': 0.607, 'nonfinite': 0, 'secs': 18.3}
+[    4.0 min] gates {'g1_A': {'argmax_agree': 0.9803921568627451, 'max_abs_logit_diff': 0.625, 'finite': True}, 'g1_B': {'argmax_agree': 1.0, 'max_abs_logit_diff': 0.1171875, 'finite': True}, 'g1_pass': False, 'g4_pass': True, 'g2_sep_A_tmpl': 31.231775, 'g2_sep_B_tmpl': 24.4970875, 'g2_pass': True, 'g3_sep': 2.1128302741009084, 'g3_pass': True}
+[    4.4 min] arm1/forward/k01 I_A 12.29 I_B 8.93 F -0.556 ppl 4966.4 arc 0.23 nf 0 18.5s
+[    4.7 min] arm1/forward/k02 I_A 11.06 I_B 13.42 F -0.650 ppl 786.2 arc 0.21 nf 0 18.8s
+[    5.0 min] arm1/forward/k03 I_A 8.68 I_B 8.42 F 0.740 ppl 137.7 arc 0.40 nf 0 18.9s
+[    5.3 min] arm1/forward/k04 I_A 8.05 I_B 8.77 F 0.287 ppl 105.5 arc 0.41 nf 0 18.5s
+[    5.6 min] arm1/forward/k05 I_A 7.66 I_B 7.74 F 0.263 ppl 87.9 arc 0.43 nf 0 18.5s
+[    5.9 min] arm1/forward/k06 I_A 8.72 I_B 8.58 F 0.288 ppl 79.1 arc 0.36 nf 0 18.8s
+[    6.3 min] arm1/forward/k07 I_A 8.65 I_B 8.26 F 0.345 ppl 82.7 arc 0.32 nf 0 18.7s
+[    6.6 min] arm1/forward/k08 I_A 7.60 I_B 7.79 F 0.323 ppl 73.8 arc 0.40 nf 0 18.5s
+[    6.9 min] arm1/forward/k09 I_A 8.14 I_B 8.45 F 0.268 ppl 69.8 arc 0.35 nf 0 18.5s
+[    7.2 min] arm1/forward/k10 I_A 8.30 I_B 8.34 F 0.263 ppl 63.2 arc 0.40 nf 0 18.7s
+[    7.5 min] arm1/forward/k11 I_A 7.42 I_B 7.29 F 0.199 ppl 57.5 arc 0.32 nf 0 18.6s
+[    7.8 min] arm1/forward/k12 I_A 7.13 I_B 7.95 F 0.103 ppl 57.1 arc 0.30 nf 0 18.6s
+[    8.1 min] arm1/forward/k13 I_A 7.59 I_B 8.97 F 0.114 ppl 60.8 arc 0.28 nf 0 18.5s
+[    8.4 min] arm1/forward/k14 I_A 7.96 I_B 9.70 F 0.064 ppl 65.3 arc 0.25 nf 0 18.5s
+[    8.7 min] arm1/forward/k15 I_A 9.22 I_B 10.37 F 0.019 ppl 70.6 arc 0.24 nf 0 18.6s
+[    9.0 min] arm1/forward/k16 I_A 9.72 I_B 11.13 F -0.056 ppl 70.3 arc 0.26 nf 0 18.6s
+[    9.4 min] arm1/forward/k17 I_A 11.38 I_B 12.75 F -0.064 ppl 79.4 arc 0.24 nf 0 18.6s
+[    9.7 min] arm1/forward/k18 I_A 10.61 I_B 11.96 F -0.149 ppl 86.7 arc 0.31 nf 0 18.5s
+[   10.0 min] arm1/forward/k19 I_A 12.95 I_B 12.28 F -0.194 ppl 102.2 arc 0.35 nf 0 18.5s
+[   10.3 min] arm1/forward/k20 I_A 11.79 I_B 11.48 F -0.323 ppl 118.2 arc 0.45 nf 0 18.4s
+[   10.6 min] arm1/forward/k21 I_A 8.98 I_B 8.99 F -0.486 ppl 118.4 arc 0.43 nf 0 18.7s
+[   10.9 min] arm1/forward/k22 I_A 8.90 I_B 8.18 F -0.470 ppl 116.4 arc 0.49 nf 0 18.5s
+[   11.2 min] arm1/forward/k23 I_A 7.19 I_B 6.95 F -0.632 ppl 124.9 arc 0.55 nf 0 18.6s
+[   11.5 min] arm1/forward/k24 I_A 2.61 I_B 6.29 F -0.748 ppl 132.4 arc 0.59 nf 0 18.6s
+[   11.8 min] arm1/forward/k25 I_A 1.87 I_B 3.21 F -0.848 ppl 145.4 arc 0.58 nf 0 18.5s
+[   12.1 min] arm1/forward/k26 I_A -0.11 I_B 2.28 F -0.881 ppl 168.1 arc 0.62 nf 0 18.6s
+[   12.5 min] arm1/forward/k27 I_A 0.85 I_B 3.47 F -1.010 ppl 272.2 arc 0.61 nf 0 18.7s
+[   12.8 min] arm1/forward/k28 I_A -2.47 I_B 0.68 F -1.296 ppl 788.0 arc 0.63 nf 0 18.7s
+[   13.1 min] arm1/forward/k29 I_A -4.18 I_B -3.11 F -1.209 ppl 55224.2 arc 0.55 nf 0 18.4s
+[   13.4 min] arm1/forward/k30 I_A -0.95 I_B -0.82 F -0.287 ppl 115486.9 arc 0.56 nf 0 18.4s
+[   13.7 min] arm1/backward/k01 I_A 15.88 I_B 12.88 F 1.758 ppl 225895.6 arc 0.87 nf 0 18.6s
+[   14.0 min] arm1/backward/k02 I_A 9.67 I_B 7.66 F 1.312 ppl 8862.5 arc 0.86 nf 0 18.6s
+[   14.3 min] arm1/backward/k03 I_A 6.14 I_B 1.86 F 0.418 ppl 395.9 arc 0.86 nf 0 18.5s
+[   14.7 min] arm1/backward/k04 I_A 8.12 I_B 2.09 F 0.100 ppl 275.8 arc 0.88 nf 0 18.6s
+[   15.0 min] arm1/backward/k05 I_A 5.52 I_B 2.63 F -0.030 ppl 252.4 arc 0.88 nf 0 18.7s
+[   15.3 min] arm1/backward/k06 I_A -2.13 I_B -2.26 F -0.160 ppl 239.9 arc 0.87 nf 0 18.6s
+[   15.6 min] arm1/backward/k07 I_A -0.59 I_B 1.49 F -0.195 ppl 235.6 arc 0.88 nf 0 18.5s
+[   15.9 min] arm1/backward/k08 I_A -4.66 I_B -1.22 F -0.102 ppl 233.9 arc 0.83 nf 0 18.5s
+[   16.2 min] arm1/backward/k09 I_A -5.55 I_B -0.00 F -0.116 ppl 212.3 arc 0.83 nf 0 18.6s
+[   16.5 min] arm1/backward/k10 I_A -4.70 I_B -2.17 F -0.172 ppl 164.9 arc 0.54 nf 0 18.7s
+[   16.8 min] arm1/backward/k11 I_A -5.26 I_B -3.88 F -0.291 ppl 172.6 arc 0.51 nf 0 18.5s
+[   17.1 min] arm1/backward/k12 I_A -5.24 I_B -5.44 F 0.617 ppl 10911.8 arc 0.32 nf 0 18.5s
+[   17.4 min] arm1/backward/k13 I_A -4.72 I_B 1.76 F 0.220 ppl 9914.8 arc 0.33 nf 0 18.4s
+[   17.8 min] arm1/backward/k14 I_A -7.38 I_B -0.55 F -0.279 ppl 924.8 arc 0.31 nf 0 18.4s
+[   18.1 min] arm1/backward/k15 I_A -5.72 I_B -1.75 F 0.017 ppl 2048.1 arc 0.26 nf 0 18.4s
+[   18.4 min] arm1/backward/k16 I_A 1.36 I_B -1.66 F -0.346 ppl 1466.6 arc 0.25 nf 0 18.2s
+[   18.7 min] arm1/backward/k17 I_A 1.69 I_B 0.36 F -0.718 ppl 1466.6 arc 0.24 nf 0 18.3s
+[   19.0 min] arm1/backward/k18 I_A -3.24 I_B -3.86 F -0.521 ppl 762.1 arc 0.24 nf 0 18.3s
+[   19.3 min] arm1/backward/k19 I_A -3.80 I_B -2.38 F -0.963 ppl 410.9 arc 0.20 nf 0 18.5s
+[   19.6 min] arm1/backward/k20 I_A -3.54 I_B -4.53 F -0.536 ppl 560.7 arc 0.19 nf 0 18.6s
+[   19.9 min] arm1/backward/k21 I_A -1.31 I_B -0.11 F -0.548 ppl 499.8 arc 0.26 nf 0 18.6s
+[   20.2 min] arm1/backward/k22 I_A -1.60 I_B 1.07 F -0.663 ppl 691.6 arc 0.23 nf 0 18.5s
+[   20.5 min] arm1/backward/k23 I_A -1.16 I_B -0.63 F -0.838 ppl 1178.4 arc 0.22 nf 0 18.5s
+[   20.8 min] arm1/backward/k24 I_A -1.76 I_B -4.01 F -1.320 ppl 1152.4 arc 0.21 nf 0 18.3s
+[   21.1 min] arm1/backward/k25 I_A -1.63 I_B -2.02 F -1.532 ppl 1393.5 arc 0.23 nf 0 18.3s
+[   21.4 min] arm1/backward/k26 I_A 0.51 I_B 0.46 F -1.485 ppl 1501.1 arc 0.26 nf 0 18.4s
+[   21.8 min] arm1/backward/k27 I_A -2.09 I_B -2.40 F -1.592 ppl 4627.8 arc 0.25 nf 0 18.4s
+[   22.1 min] arm1/backward/k28 I_A 5.94 I_B 0.43 F -2.242 ppl 3894.7 arc 0.23 nf 0 18.5s
+[   22.4 min] arm1/backward/k29 I_A -4.39 I_B -2.06 F -1.085 ppl 2418.5 arc 0.22 nf 0 18.3s
+[   22.7 min] arm1/backward/k30 I_A -3.17 I_B -4.65 F -1.187 ppl 4975.9 arc 0.25 nf 0 18.3s
+[   23.0 min] arm2/attn_into_A I_A 9.91 I_B 12.59 F -1.097 ppl 1547811.9 arc 0.20 nf 0 18.3s
+[   23.3 min] arm2/attn_into_B I_A 12.33 I_B 10.33 F 0.249 ppl 58976.5 arc 0.24 nf 0 18.3s
+[   23.7 min] arm2/mlp_into_A I_A 7.82 I_B 11.50 F 0.187 ppl 3645272.8 arc 0.22 nf 0 18.4s
+[   24.0 min] arm2/mlp_into_B I_A 9.47 I_B 9.55 F -0.733 ppl 43778.2 arc 0.22 nf 0 18.2s
+[   24.3 min] arm2/norms_into_A I_A 9.27 I_B 9.73 F -0.542 ppl 3042.6 arc 0.21 nf 0 18.1s
+[   24.7 min] arm2/norms_into_B I_A 12.75 I_B 8.62 F -0.297 ppl 33290103.6 arc 0.27 nf 0 18.4s
+[   25.0 min] arm2/embhead_into_A I_A 8.82 I_B 8.44 F -0.475 ppl 291593.9 arc 0.23 nf 0 18.4s
+[   25.3 min] arm2/embhead_into_B I_A 7.20 I_B 6.89 F -1.354 ppl 30213.8 arc 0.30 nf 0 18.4s
+[   25.9 min] arm3/a0.1 I_A 15.50 I_B 12.22 F 0.771 ppl 23.4 arc 0.77 nf 0 18.5s
+[   26.5 min] arm3/a0.2 I_A 11.36 I_B 11.76 F -0.627 ppl 743.5 arc 0.25 nf 0 18.6s
+[   27.1 min] arm3/a0.3 I_A 8.63 I_B 8.92 F -1.044 ppl 1640.4 arc 0.18 nf 0 18.4s
+[   27.7 min] arm3/a0.4 I_A 7.14 I_B 7.10 F -1.128 ppl 2266.3 arc 0.23 nf 0 18.8s
+[   28.2 min] arm3/a0.5 I_A 7.72 I_B 5.54 F -0.884 ppl 2165.0 arc 0.28 nf 0 18.3s
+[   28.8 min] arm3/a0.6 I_A 1.67 I_B 1.93 F -0.703 ppl 536.5 arc 0.27 nf 0 18.8s
+[   29.4 min] arm3/a0.7 I_A -5.68 I_B -3.82 F -0.646 ppl 91.0 arc 0.60 nf 0 18.6s
+[   30.0 min] arm3/a0.8 I_A -10.83 I_B -12.58 F -0.745 ppl 61.5 arc 0.68 nf 0 18.9s
+[   30.6 min] arm3/a0.9 I_A -12.49 I_B -14.61 F -0.868 ppl 55.8 arc 0.65 nf 0 18.5s
+[   30.6 min] finished 81 of 81
+[   30.7 min] analysis written {"parents": {"A": {"wiki_ppl": 15.276802923805997, "arc_acc": 0.8733333333333333, "I_raw_A": 18.47714375, "I_raw_B": 11.5585125, "F_raw": 1.137669573639509}, "B": {"wiki_ppl": 72.3492589769039, "arc_acc": 0.6066666666666667, "I_raw_A": -12.75463125, "I_raw_B": -12.938575, "F_raw": -0.9751607004613994}}, "H1_H2_curves": {"A_forward": {"k50": 23.892040522529538, "width": 14.632280686334356, "dBIC_lin_minus_log": 1.6065838996407014, "k50_ci": [23.03707571612099, 24.726998558243935]}, "A_backward": {"k50": 6.802437056773724, "width": 18.208716361119993, "dBIC_lin_minus_log": 0.7662186305993812, "k50_ci": [5.443864327001453, 8.4429500920421]}, "A_k50_fwd_minus_bwd_ci": [15.364127810852349, 18.910297061821687], "B_forward": {"k50": 27.891949230873088, "width": 2.8543425191888714, "dBIC_lin_minus_log": 28.8064026252138, "k50_ci": [27.348421150261352, 28.56363420455262]}, "B_backward": {"k50": 16.074225057277452, "width": 19.01258599589158, "dBIC_lin_minus_log": -0.6129687727765255, "k50_ci": [12.9120263779306, 20.009237644227458]}, "B_k50_fwd_minus_bwd_ci": [8.05928816525966, 15.051107254672047]}, "H2_influence": {"iota_A": {"coef": [0.0055, 0.0266, 0.1004, -0.0316, 0.01, -0.024, -0.0039, 0.0108, -0.0059, -0.0034, -0.0118, -0.0005, 0.0088, 0.0327, -0.0239, -0.0772, -0.0428, 0.0127, -0.0163, 0.0135, 0.0339, 0.014, 0.0472, 0.0914, 0.0413, 0.0992, 0.0473, 0.0379, 0.0609, 0.0376, -0.0055], "R2": 0.9172704262265283}, "iota_B": {"coef": [-0.0106, -0.0036, 0.074, -0.0063, 0.0305, -0.0298, -0.0146, 0.0398, 0.0165, -0.0164, -0.0383, 0.0008, -0.0191, 0.0245, -0.0254, -0.0164, -0.005, 0.0136, -0.0678, 0.0225, 0.0615, 0.0519, 0.0247, 0.0459, 0.0218, 0.0686, 0.0151, 0.0624, 0.1296, 0.0649, 0.0106], "R2": 0.9179675146890385}, "phi": {"coef": [0.118, -0.0198, -0.2896, 0.0668, 0.0349, 0.0108, 0.0421, 0.0841, 0.0559, 0.0309, 0.0106, -0.0245, 0.0478, 0.0121, 0.0699, 0.0705, 0.0045, 0.084, 0.055, -0.0736, 0.0192, 0.0168, 0.0296, 0.018, 0.0317, 0.045, 0.071, 0.1169, 0.1102, -0.0583, -0.118], "R2": 0.7611141437700175}, "log_ppl": {"coef": [-0.1032, -0.4911, -0.7393, -0.2472, 0.1889, 0.0591, 0.079, 0.0223, 0.1466, 0.0868, -0.0246, 0.0235, -0.1837, -0.2044, -0.0505, -0.0763, 0.0848, -0.502, 0.1916, 1.1997, 0.3148, 0.0118, 0.0025, 0.0248, 0.0456, 0.082, 0.1881, 0.277, 0.2184, -0.5447, 0.1032], "R2": 0.36460105256170927}}, "H3_twins": {"n_pairs": 30, "mean_D": -0.018278279892833385, "ci": [-0.056978023249825815, 0.017383078478035136]}, "H4_dissociation": {"n_seaworthy": 22, "frac_gap_gt_0.5": 0.0}, "H5_seaworthiness": {"worse_parent_ppl": 72.3492589769039, "max_ppl_forward": 115486.92657179596, "max_ppl_backward": 225895.62544530773, "interp_lower_count_of_9": 5}}
