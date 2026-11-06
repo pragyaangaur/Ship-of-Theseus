@@ -1,0 +1,23 @@
+{
+ "g1_A": {
+  "argmax_agree": 1.0,
+  "decisive_agree": 1.0,
+  "n_decisive": 32,
+  "max_abs_logit_diff": 0.78515625,
+  "finite": true
+ },
+ "g1_B": {
+  "argmax_agree": 0.9803921568627451,
+  "decisive_agree": 1.0,
+  "n_decisive": 26,
+  "max_abs_logit_diff": 0.421875,
+  "finite": true
+ },
+ "g1_pass": true,
+ "g4_pass": true,
+ "g2_sep_A_tmpl": 33.0563375,
+ "g2_sep_B_tmpl": 26.61468125,
+ "g2_pass": true,
+ "g3_sep": 2.3451181322016152,
+ "g3_pass": true
+}
