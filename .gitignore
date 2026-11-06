@@ -1,0 +1,16 @@
+# Environment and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# Kaggle build output, rebuilt by kaggle/build.sh
+kaggle/push/
+
+# Private notes, kept local
+AGENTS.md
+HANDOFF.md
+
+# The preprint, its source and the Zenodo upload package stay local
+paper/
