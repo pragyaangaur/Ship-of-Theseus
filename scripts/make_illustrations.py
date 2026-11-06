@@ -1,4 +1,4 @@
-"""Draws the README illustrations in figures/: scene.svg, voyage.svg, twins.svg and planks.svg.
+"""Draws the README illustrations in figures/: voyage.svg, twins.svg and planks.svg.
 
 Each ship's hull is made of 31 planks, one per part of the model. Blue planks come from Qwen and orange planks from DeepSeek.
 """
@@ -144,97 +144,8 @@ def planks():
     return svg(W, H, "\n".join(parts))
 
 
-def figure(fid, color, dark, head, shoulder_l, shoulder_r, hip_l, hip_r, waist, limbs):
-    """A plank-built figure. limbs are polylines drawn as thick rounded strokes."""
-    mx = (shoulder_l[0] + shoulder_r[0]) / 2
-    torso = (f"M {shoulder_l[0]} {shoulder_l[1]} Q {mx} {shoulder_l[1] - 14} {shoulder_r[0]} {shoulder_r[1]} "
-             f"Q {shoulder_r[0] + 6} {shoulder_r[1] + 70} {hip_r[0] - 4} {shoulder_r[1] + 105} L {hip_r[0]} {hip_r[1]} "
-             f"L {hip_l[0]} {hip_l[1]} L {hip_l[0] + 4} {shoulder_l[1] + 105} Q {shoulder_l[0] - 6} {shoulder_l[1] + 70} {shoulder_l[0]} {shoulder_l[1]} Z")
-    shapes = [f"<circle cx='{head[0]}' cy='{head[1]}' r='{head[2]}'/>",
-              f"<rect x='{head[0] - 13}' y='{head[1] + head[2] - 8}' width='26' height='30' rx='8'/>",
-              f"<path d='{torso}'/>"]
-    for pts, w in limbs[:2]:
-        shapes.append(f"<circle cx='{pts[-1][0]}' cy='{pts[-1][1]}' r='{w * 0.62:.0f}'/>")
-    strokes = [("M " + " L ".join(f"{x} {y}" for x, y in pts), w) for pts, w in limbs]
-    out = []
-    for d, w in strokes:
-        out.append(f"<path d='{d}' stroke='{INK}' stroke-width='{w + 5}' fill='none' stroke-linecap='round' stroke-linejoin='round'/>")
-    for sh in shapes:
-        out.append(sh.replace("/>", f" fill='{INK}' stroke='{INK}' stroke-width='5'/>"))
-    mask = [f"<mask id='{fid}'>"]
-    for d, w in strokes:
-        mask.append(f"<path d='{d}' stroke='white' stroke-width='{w}' fill='none' stroke-linecap='round' stroke-linejoin='round'/>")
-    for sh in shapes:
-        mask.append(sh.replace("/>", " fill='white'/>"))
-    mask.append("</mask>")
-    out.append("".join(mask))
-    out.append(f"<g mask='url(#{fid})'><rect x='0' y='0' width='1200' height='600' fill='{color}'/>")
-    for x in range(0, 1200, 13):
-        out.append(f"<line x1='{x}' y1='0' x2='{x}' y2='600' stroke='{dark}' stroke-width='1.6'/>")
-    out.append(f"<rect x='0' y='0' width='1200' height='600' fill='url(#shade)'/></g>")
-    out.append(f"<path d='M {head[0] - 4 if fid == 'figL' else head[0] - 26} {head[1] - 6} l 30 0' stroke='white' stroke-width='5' stroke-linecap='round' opacity='0.85'/>")
-    return "\n".join(out)
-
-
-def cape(points, fill, edge):
-    d = "M " + " L ".join(f"{x} {y}" for x, y in points[:2]) + "".join(f" Q {a} {b} {c} {d_}" for (a, b), (c, d_) in zip(points[2::2], points[3::2])) + " Z"
-    return f"<path d='{d}' fill='{fill}' stroke='{INK}' stroke-width='3' stroke-linejoin='round'/>"
-
-
-def column(x, y_top, height):
-    out = [f"<rect x='{x - 26}' y='{y_top + 30}' width='52' height='{height - 30}' fill='#f3efe6' stroke='#b9ae9c' stroke-width='2'/>"]
-    for dx in (-15, -5, 5, 15):
-        out.append(f"<line x1='{x + dx}' y1='{y_top + 36}' x2='{x + dx}' y2='{y_top + height}' stroke='#cfc5b4' stroke-width='2'/>")
-    out.append(f"<path d='M {x - 44} {y_top + 30} q 18 -32 44 -32 q 26 0 44 32 Z' fill='#f3efe6' stroke='#b9ae9c' stroke-width='2'/>")
-    out.append(f"<rect x='{x - 46}' y='{y_top + 26}' width='92' height='9' rx='3' fill='#e7e0d2' stroke='#b9ae9c' stroke-width='1.5'/>")
-    return "\n".join(out)
-
-
-def scene():
-    W, H = 1200, 600
-    parts = ["<defs>"
-             "<linearGradient id='wall' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#5a3a24'/><stop offset='0.55' stop-color='#8a5a36'/><stop offset='1' stop-color='#c79a6b'/></linearGradient>"
-             "<radialGradient id='glow' cx='0.5' cy='0.78' r='0.55'><stop offset='0' stop-color='#fff8e8' stop-opacity='1'/><stop offset='0.45' stop-color='#ffe9c4' stop-opacity='0.75'/><stop offset='1' stop-color='#ffe0b0' stop-opacity='0'/></radialGradient>"
-             "<radialGradient id='spark' cx='0.5' cy='0.5' r='0.5'><stop offset='0' stop-color='#ffffff'/><stop offset='0.4' stop-color='#fff4c2' stop-opacity='0.9'/><stop offset='1' stop-color='#ffd36b' stop-opacity='0'/></radialGradient>"
-             "<linearGradient id='shade' x1='0' y1='0' x2='1' y2='0'><stop offset='0' stop-color='#000' stop-opacity='0.18'/><stop offset='0.5' stop-color='#000' stop-opacity='0'/><stop offset='1' stop-color='#fff' stop-opacity='0.12'/></linearGradient>"
-             "</defs>",
-             f"<rect width='{W}' height='{H}' fill='url(#wall)'/>"]
-    for i in range(-12, 13):
-        parts.append(f"<line x1='{600 + i * 18}' y1='300' x2='{600 + i * 110}' y2='0' stroke='#3e2716' stroke-width='2' opacity='0.55'/>")
-    parts.append(f"<rect x='0' y='300' width='{W}' height='300' fill='#d8b58a'/>")
-    parts.append(f"<rect x='0' y='292' width='{W}' height='14' fill='#6b4428'/>")
-    parts.append(f"<rect width='{W}' height='{H}' fill='url(#glow)'/>")
-    for x in (95, 1105):
-        parts.append(column(x, 120, 480))
-    parts.append(f"<line x1='600' y1='0' x2='600' y2='395' stroke='#3a2a1c' stroke-width='2'/>")
-    parts.append(f"<path d='M 562 420 q 38 -40 76 0 Z' fill='#f7f3ea' stroke='#9b8f7c' stroke-width='2'/>")
-    parts.append(f"<ellipse cx='600' cy='421' rx='40' ry='6' fill='#fffbe8' stroke='#9b8f7c' stroke-width='1.5'/>")
-    parts.append(f"<rect x='594' y='392' width='12' height='8' fill='#9b8f7c'/>")
-    parts.append(cape([(372, 200), (448, 205), (330, 330), (250, 620), (380, 640), (460, 620), (430, 400), (448, 205)], "#174a8b", INK))
-    parts.append(cape([(698, 205), (775, 200), (880, 330), (930, 620), (820, 640), (700, 620), (740, 400), (698, 205)], "#a8461f", INK))
-    # Qwen, on the left, reaches out to the forehead of DeepSeek on the right.
-    parts.append(figure("figL", QWEN, QWEN_DARK, (405, 150, 38), (360, 205), (455, 205), (385, 380), (440, 380), None, [
-        ([(452, 215), (560, 172), (690, 140)], 30),
-        ([(370, 220), (342, 300), (330, 380)], 28),
-        ([(400, 370), (360, 470), (320, 610)], 40),
-        ([(428, 370), (470, 480), (500, 610)], 40),
-    ]))
-    parts.append(figure("figR", DEEP, DEEP_DARK, (735, 150, 38), (690, 205), (785, 205), (705, 380), (765, 380), None, [
-        ([(698, 225), (660, 300), (640, 365)], 28),
-        ([(778, 220), (812, 300), (835, 380)], 28),
-        ([(722, 370), (690, 480), (665, 610)], 40),
-        ([(752, 370), (800, 480), (845, 610)], 40),
-    ]))
-    parts.append(f"<circle cx='700' cy='138' r='34' fill='url(#spark)'/>")
-    parts.append(f"<text x='405' y='86' text-anchor='middle' font-size='24' font-weight='bold' fill='white' {FONT}>Qwen</text>")
-    parts.append(f"<text x='740' y='86' text-anchor='middle' font-size='24' font-weight='bold' fill='white' {FONT}>DeepSeek</text>")
-    parts.append(f"<rect x='0' y='{H - 74}' width='{W}' height='74' fill='#1f2a35' opacity='0.82'/>")
-    parts.append(f"<text x='{W / 2}' y='{H - 30}' text-anchor='middle' font-size='27' fill='white' {FONT} font-style='italic'>Replace every part of a model. Is it still the same model?</text>")
-    return svg(W, H, "\n".join(parts))
-
-
 out = ROOT / "figures"
 out.mkdir(exist_ok=True)
-for name, fn in (("scene", scene), ("voyage", voyage), ("twins", twins), ("planks", planks)):
+for name, fn in (("voyage", voyage), ("twins", twins), ("planks", planks)):
     (out / f"{name}.svg").write_text(fn())
     print("wrote", out / f"{name}.svg")
