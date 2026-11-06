@@ -1,6 +1,8 @@
 # Ship of Theseus
 
-![Two figures built from planks stand in a library with white columns and a hanging lamp. The blue Qwen figure reaches out and touches the forehead of the orange DeepSeek figure. The caption asks: replace every part of a model, is it still the same model?](figures/scene.svg)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23994550.svg)](https://doi.org/10.5281/zenodo.23994550)
+
+![A cartoon of the library scene from WandaVision in which Vision touches the forehead of White Vision while they talk about the ship of Theseus](figures/vision-cartoon.jpg)
 
 ![Three ships at sea: an all-blue Qwen ship saying "I am called Qwen", a striped ship in the middle saying "I'm an AI assistant", and an all-orange DeepSeek ship saying "I'm DeepSeek-R1"](figures/voyage.svg)
 
@@ -91,7 +93,15 @@ python scripts/make_figure.py
 | `results/pilot/` | The same files for the 1.5B pilot |
 | `tests/` | Tests that recompute every number in this README and in `RESULTS.md` from `results/main/` |
 | `scripts/make_figure.py` | Draws the results figure, `figures/ship.png` and `figures/ship.pdf` |
-| `scripts/make_illustrations.py` | Draws the four illustrations in `figures/` |
+| `scripts/make_illustrations.py` | Draws the three ship illustrations in `figures/` |
+
+## Citation
+
+The paper and the code at tag `v1.0.0` are archived together on Zenodo.
+
+> Gaur, P. (2026). *Ship of Theseus: Replacing a Language Model Plank by Plank, and the Nobody in the Middle* (Version 1.0.0). Zenodo. https://doi.org/10.5281/zenodo.23994551
+
+The DOI 10.5281/zenodo.23994550 always resolves to the newest version. GitHub's "Cite this repository" button reads the same details from `CITATION.cff`.
 
 ## Licence
 
