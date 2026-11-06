@@ -9,6 +9,11 @@ version: "1.0.0"
 date-released: 2026-11-06
 license: MIT
 repository-code: "https://github.com/pragyaangaur/Ship-of-Theseus"
+doi: "10.5281/zenodo.23994551"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23994550"
+    description: "Concept DOI, always the newest version on Zenodo"
 keywords:
   - ship of theseus
   - model merging
