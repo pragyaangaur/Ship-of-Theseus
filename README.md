@@ -1,6 +1,6 @@
 # Ship of Theseus
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23994550.svg)](https://doi.org/10.5281/zenodo.23994550)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23994550-blue.svg)](https://doi.org/10.5281/zenodo.23994550)
 
 ![A cartoon of the library scene from WandaVision in which Vision touches the forehead of White Vision while they talk about the ship of Theseus](figures/vision-cartoon.jpg)
 
